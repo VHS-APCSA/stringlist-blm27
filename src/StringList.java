@@ -31,4 +31,8 @@ public class StringList
 		}
 		return reverse;
 	}
+	public String findFirstVowel()
+	{
+		
+	}
 }
