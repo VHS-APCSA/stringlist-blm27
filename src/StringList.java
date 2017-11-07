@@ -25,14 +25,29 @@ public class StringList
 		int index = 0;
 		while(index < word.length())
 		{
-			System.out.println(word.substring(index +1, index));
+			reverse = reverse + word.substring(index, index+1);
 			
 			index++;
 		}
 		return reverse;
 	}
-	public String findFirstVowel()
+	public String findFirstVowel(String word)
 	{
-		
+		String firstVowel = "";
+		int index = 0;
+		while(index < word.length())
+		{
+			if(word.substring(index, index + 1).equals("a"))
+			{
+				firstVowel = firstVowel;
+				return firstVowel;
+			}
+			else
+			{
+				firstVowel = firstVowel + word.substring(index, index +1);
+			}
+			index++;
+		}
+		return firstVowel;	
 	}
 }
