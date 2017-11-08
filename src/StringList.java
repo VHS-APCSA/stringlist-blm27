@@ -31,23 +31,54 @@ public class StringList
 		}
 		return reverse;
 	}
-	public String findFirstVowel(String word)
+	public int findFirstVowel(String word)
 	{
-		String firstVowel = "";
+		int firstVowel = -1;
 		int index = 0;
 		while(index < word.length())
 		{
 			if(word.substring(index, index + 1).equals("a"))
 			{
-				firstVowel = firstVowel;
-				return firstVowel;
+				firstVowel = index;
 			}
-			else
+			else if(word.substring(index, index + 1).equals("e"))
 			{
-				firstVowel = firstVowel + word.substring(index, index +1);
+				firstVowel = index;
+			}
+			else if(word.substring(index, index + 1).equals("i"))
+			{
+				firstVowel = index;
+			}
+			else if(word.substring(index, index + 1).equals("o"))
+			{
+				firstVowel = index;
+			}
+			else if(word.substring(index, index + 1).equals("u"))
+			{
+				firstVowel = index;
+			}
+			if(firstVowel > -1)
+			{
+				return firstVowel;
 			}
 			index++;
 		}
 		return firstVowel;	
+	}
+	public String pigLatin(String word)
+	{
+		int index = 0;
+		while(index < list.size)
+		{
+			if(word.substring(index, index + 1).equals("e"))
+			{
+				esFront = "e" + esFront;
+			}
+			else
+			{
+				esFront = esFront + word.substring(index, index +1);
+			}
+			index++;
+		}
 	}
 }
