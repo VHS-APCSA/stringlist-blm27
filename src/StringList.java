@@ -15,7 +15,7 @@ public class StringList
 		String str = "";
 		for(String strings : list)
 		{
-			str += strings + "\n";
+			str += strings;
 		}
 		return str;
 	}
@@ -68,17 +68,14 @@ public class StringList
 	public String pigLatin(String word)
 	{
 		int index = 0;
-		while(index < list.size)
+		while(index < list.size())
 		{
-			if(word.substring(index, index + 1).equals("e"))
-			{
-				esFront = "e" + esFront;
-			}
-			else
-			{
-				esFront = esFront + word.substring(index, index +1);
-			}
+			int firstVowelIndex = findFirstVowel(word);
+			word = word.substring(0, firstVowelIndex) + word.substring(firstVowelIndex, index +1) + "ay";
+			
 			index++;
 		}
+		return word;
 	}
+		
 }
