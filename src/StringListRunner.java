@@ -13,13 +13,13 @@ public class StringListRunner
 			word = input.nextLine();
 			if(!word.equals("quit"))
 			{	
-			list.addWord(word);
+				list.addWord(word);
 			}	
 		}
 		System.out.println(list);
-		String rev = list.reverse(word);
-		System.out.println("Reverse string: " + rev);
-		String pig = list.pigLatin(word);
-		System.out.println("Pig latin: " + pig);
+		list.reverseWords();
+		System.out.println(list);
+		list.pigLatinWords();
+		System.out.println(list);
 	}
 }
